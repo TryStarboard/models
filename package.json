@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "dependencies": {
     "co": "4.6.0",
-    "knex": "0.11.6",
+    "knex": "0.11.7",
     "node-uuid": "1.4.7",
     "pg": "5.1.0"
   },
