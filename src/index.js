@@ -15,8 +15,8 @@ function createModels(opts) {
     connection: opts.connection,
   });
 
-  const Tag = createTagModel(opts);
-  const Repo = createRepoModel(opts);
+  const Tag = createTagModel(db);
+  const Repo = createRepoModel(db);
 
   return {
     Tag,
