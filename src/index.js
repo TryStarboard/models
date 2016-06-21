@@ -23,6 +23,7 @@ function createModels(opts) {
   const RepoTag = createRepoTagModel(db);
 
   return {
+    db,
     User,
     Tag,
     Repo,
