@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "sequelize": "registry:npm/sequelize#3.0.0+20160604152601"
+  },
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20160621231320"
+  }
+}
