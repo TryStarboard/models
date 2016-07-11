@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "diagnostics": false,
-    "listFiles": true,
+    "listFiles": false,
     "module": "commonjs",
     "noImplicitAny": true,
     "outDir": "lib",

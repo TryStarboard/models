@@ -1,5 +1,24 @@
-import {Instance, Connection} from 'sequelize';
+import {
+  Instance,
+  Connection,
+  BelongsToGetAssociationMixin,
+  BelongsToSetAssociationMixin,
+  BelongsToCreateAssociationMixin,
+  BelongsToManyGetAssociationsMixin,
+  BelongsToManySetAssociationsMixin,
+  BelongsToManyAddAssociationsMixin,
+  BelongsToManyAddAssociationMixin,
+  BelongsToManyCreateAssociationMixin,
+  BelongsToManyRemoveAssociationMixin,
+  BelongsToManyRemoveAssociationsMixin,
+  BelongsToManyHasAssociationMixin,
+  BelongsToManyHasAssociationsMixin,
+  BelongsToManyCountAssociationsMixin,
+} from 'sequelize';
 import Sequelize = require('sequelize');
+import {UserAttributes, UserInstance} from './createUserModel';
+import {RepoAttributes, RepoInstance} from './createRepoModel';
+import {RepoTagAttributes, RepoTagInstance} from './createRepoTagModel';
 
 export interface TagAttributes {
   id: string;
@@ -12,6 +31,20 @@ export interface TagAttributes {
 }
 
 export interface TagInstance extends Instance<TagInstance, TagAttributes>, TagAttributes {
+  getUser: BelongsToGetAssociationMixin<UserInstance>;
+  setUser: BelongsToSetAssociationMixin<UserInstance, string>;
+  createUser: BelongsToCreateAssociationMixin<UserAttributes, UserInstance>;
+
+  getRepos: BelongsToManyGetAssociationsMixin<RepoInstance>;
+  setRepos: BelongsToManySetAssociationsMixin<RepoInstance, string, RepoTagAttributes>;
+  addRepos: BelongsToManyAddAssociationsMixin<RepoInstance, string, RepoTagAttributes>;
+  addRepo: BelongsToManyAddAssociationMixin<RepoInstance, string, RepoTagAttributes>;
+  createRepo: BelongsToManyCreateAssociationMixin<RepoAttributes, UserInstance, RepoTagAttributes>;
+  removeRepo: BelongsToManyRemoveAssociationMixin<RepoInstance, string>;
+  removeRepos: BelongsToManyRemoveAssociationsMixin<RepoInstance, string>;
+  hasRepo: BelongsToManyHasAssociationMixin<RepoInstance, string>;
+  hasRepos: BelongsToManyHasAssociationsMixin<RepoInstance, string>;
+  countRepos: BelongsToManyCountAssociationsMixin;
 }
 
 export default function (sequelize: Connection) {

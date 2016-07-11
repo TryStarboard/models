@@ -13,5 +13,6 @@ export default function (opts: ConnectionOptions) {
     host: opts.host,
     port: opts.port,
     dialect: 'postgres',
+    logging: () => {}
   });
 }

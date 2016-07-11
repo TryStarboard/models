@@ -9,8 +9,7 @@ export interface RepoTagAttributes {
   repo_id: string;
 }
 
-export interface RepoTagInstance extends Instance<RepoTagInstance, RepoTagAttributes>, RepoTagAttributes {
-}
+export interface RepoTagInstance extends Instance<RepoTagInstance, RepoTagAttributes>, RepoTagAttributes {}
 
 export default function (sequelize: Connection) {
   return sequelize.define<RepoTagInstance, RepoTagAttributes>(

@@ -1,5 +1,20 @@
-import {Instance, Connection} from 'sequelize';
+import {
+  Instance,
+  Connection,
+  HasManyGetAssociationsMixin,
+  HasManySetAssociationsMixin,
+  HasManyAddAssociationsMixin,
+  HasManyAddAssociationMixin,
+  HasManyCreateAssociationMixin,
+  HasManyRemoveAssociationMixin,
+  HasManyRemoveAssociationsMixin,
+  HasManyHasAssociationMixin,
+  HasManyHasAssociationsMixin,
+  HasManyCountAssociationsMixin,
+} from 'sequelize';
 import Sequelize = require('sequelize');
+import {RepoAttributes, RepoInstance} from './createRepoModel';
+import {TagAttributes, TagInstance} from './createTagModel';
 
 export interface UserAttributes {
   id: string;
@@ -15,6 +30,27 @@ export interface UserAttributes {
 }
 
 export interface UserInstance extends Instance<UserInstance, UserAttributes>, UserAttributes {
+  getRepos: HasManyGetAssociationsMixin<RepoInstance>;
+  setRepos: HasManySetAssociationsMixin<RepoInstance, string>;
+  addRepos: HasManyAddAssociationsMixin<RepoInstance, string>;
+  addRepo: HasManyAddAssociationMixin<RepoInstance, string>;
+  createRepo: HasManyCreateAssociationMixin<RepoAttributes, RepoInstance>;
+  removeRepo: HasManyRemoveAssociationMixin<RepoInstance, string>;
+  removeRepos: HasManyRemoveAssociationsMixin<RepoInstance, string>;
+  hasRepo: HasManyHasAssociationMixin<RepoInstance, string>;
+  hasRepos: HasManyHasAssociationsMixin<RepoInstance, string>;
+  countRepos: HasManyCountAssociationsMixin;
+
+  getTags: HasManyGetAssociationsMixin<TagInstance>;
+  setTags: HasManySetAssociationsMixin<TagInstance, string>;
+  addTags: HasManyAddAssociationsMixin<TagInstance, string>;
+  addTag: HasManyAddAssociationMixin<TagInstance, string>;
+  createTag: HasManyCreateAssociationMixin<TagAttributes, TagInstance>;
+  removeTag: HasManyRemoveAssociationMixin<TagInstance, string>;
+  removeTags: HasManyRemoveAssociationsMixin<TagInstance, string>;
+  hasTag: HasManyHasAssociationMixin<TagInstance, string>;
+  hasTags: HasManyHasAssociationsMixin<TagInstance, string>;
+  countTags: HasManyCountAssociationsMixin;
 }
 
 export default function (sequelize: Connection) {

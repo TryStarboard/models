@@ -4,6 +4,7 @@
   "author": "Daiwei Lu <daiweilu123@gmail.com> (http://daiwei.lu/)",
   "license": "MIT",
   "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "files": [
     "lib"
   ],
@@ -22,7 +23,9 @@
     "test": "tslint src/**/*",
     "clean": "rm -rf lib",
     "build": "npm run clean && tsc",
+    "preversion": "npm run build && npm test",
     "postversion": "git push && git push --tags",
+    "prepublish": "npm run build",
     "postpublish": "greenkeeper-postpublish"
   }
 }
