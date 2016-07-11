@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "sequelize": "github:d6u/typed-sequelize#8d212d05dbeb4c000eedb4199e3cb524274a7d2f"
+  },
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20160709114037"
+  }
+}
