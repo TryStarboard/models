@@ -25,7 +25,6 @@
     "build": "npm run clean && tsc",
     "preversion": "npm run build && npm test",
     "postversion": "git push && git push --tags",
-    "prepublish": "npm run build",
     "postpublish": "greenkeeper-postpublish"
   }
 }
