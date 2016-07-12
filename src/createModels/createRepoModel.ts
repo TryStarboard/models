@@ -22,7 +22,7 @@ import {RepoTagAttributes, RepoTagInstance} from './createRepoTagModel';
 
 export interface RepoAttributes {
   id: string;
-  github_id: number;
+  github_id: string;
   full_name: string;
   description: string;
   homepage: string;
@@ -62,6 +62,8 @@ export default function (sequelize: Connection) {
         primaryKey: true,
       },
       github_id: {
+        // BIGINT will be treated as string to prevent precision loss
+        // see http://docs.sequelizejs.com/en/latest/api/datatypes/
         type: Sequelize.BIGINT,
         allowNull: false,
       },
