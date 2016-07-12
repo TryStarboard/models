@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "starboard-dev",
+    "password": null,
+    "database": "starboard-dev",
+    "host": "127.0.0.1",
+    "port": 10101,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "port": 10101,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "port": 10101,
+    "dialect": "mysql"
+  }
+}
