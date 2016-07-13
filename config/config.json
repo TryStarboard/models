@@ -7,20 +7,12 @@
     "port": 10101,
     "dialect": "postgres"
   },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "port": 10101,
-    "dialect": "mysql"
-  },
   "production": {
-    "username": "root",
+    "username": "starboard-prod",
     "password": null,
-    "database": "database_production",
+    "database": "starboard-prod",
     "host": "127.0.0.1",
-    "port": 10101,
-    "dialect": "mysql"
+    "port": 30100,
+    "dialect": "postgres"
   }
 }
