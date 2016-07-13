@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "starboard-dev",
+    "password": null,
+    "database": "starboard-dev",
+    "host": "127.0.0.1",
+    "port": 10101,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "starboard-prod",
+    "password": null,
+    "database": "starboard-prod",
+    "host": "127.0.0.1",
+    "port": 30100,
+    "dialect": "postgres"
+  }
+}
