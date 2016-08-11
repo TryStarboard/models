@@ -9,7 +9,7 @@
     "lib"
   ],
   "dependencies": {
-    "pg": "6.0.4",
+    "pg": "6.1.0",
     "sequelize": "3.23.6"
   },
   "devDependencies": {
